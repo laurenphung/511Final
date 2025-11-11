@@ -1,7 +1,7 @@
 ---
-title: "My Final Project Template"
-author: Your name here
-subtitle: Subtitle here if desired
+title: "Heat Island Analysis of Rochester, New York"
+author: Damien Hotte
+subtitle: Quantifying the Surface Urban Heat Island (SUHI) effect in Rochester and exploring its relationship with socioeconomic features.
 date: today
 date-format: long
 ---
@@ -10,7 +10,14 @@ date-format: long
 
 \[\~ 200 words\]
 
-Clearly stated background and questions / hypotheses / problems being addressed. Sets up the analysis in an interesting and compelling way. Include figures if you like.
+The Urban Heat Island (UHI) effect is a global phenomenon in which urban areas experience significantly higher Land Surface Temperatures (LST) than their surrounding rural counterparts. This temperature disparity is caused primarily by the dense concentration of buildings, roads, and other impervious surfaces that absorb and retain heat, along with a decrease of vegetation and green spaces that would otherwise provide natural cooling, reduced by urban expansion.
+
+In cities like Rochester, New York, heat patterns do not impact all communities equally. Variations in land use, socio-economic conditions, and access to vegetation can create localized “hot spots” that exacerbate health and environmental inequities. Prolonged exposure to elevated temperatures can increase energy demands, worsen air quality, and put vulnerable populations at risk. This project seeks to examine the relationship between socio-economic and land-use patterns and disparities in heat exposure across Rochester. 
+
+Specifically, it aims to explore how differences in vegetative cover mediate these temperature variations and whether neighborhoods with lower income or less green space experience greater heat stress.By analyzing spatial data on LST, land use, and vegetation distribution, this study will shed light on the socio-environmental dynamics of urban heat and contribute to more equitable strategies for climate resilience.
+
+Note: Changes from brainstorm- narrowing to just focus on Rochester instead of including buffalo, in order to better focus on the comparison of land use and poverty’s impact on green space in Rochester.
+
 
 # Materials and methods
 
@@ -22,29 +29,7 @@ Code: The code associated with the project is well organized and easy to follow.
 
 Data: The underlying data are publicly accessible via the web and downloaded/accessed within the Rmd script. If you want to use your own data, you must make it available on a website (e.g. Figshare) so that others are able to re-run your code.
 
-You can do bullets like this:
 
--   The first most important thing
--   The second most important thing
--   The third most important thing
-
-You can do numbers like this:
-
-1.  The first most important thing
-2.  The second most important thing
-3.  The third most important thing
-
-See <http://rmarkdown.rstudio.com/> for all the amazing things you can do.
-
-Here's my first code chunk.
-
-```{r}
-x=3+4
-```
-
-Refer to output in your narrative like this: x=`r x` .
-
-Load any required packages in a code chunk (you may need to install some packages):
 
 ```{r, message=F, warning=F}
 library(tidyverse)
@@ -52,62 +37,64 @@ library(leaflet)
 library(kableExtra)
 library(htmlwidgets)
 library(widgetframe)
+library(tidycensus)
+library(sf)
+library(ggplot2)
+library(tigris)
 knitr::opts_chunk$set(widgetframe_widgets_dir = 'widgets' ) 
 knitr::opts_chunk$set(cache=TRUE)  # cache the results for quick compiling
 ```
 
 ## Download and clean all required data
 
-```{r}
-n=20
-data=data.frame(x=runif(n,-180,180),
-                y=runif(n,-60,60),
-                size = runif(n, 5, 20),
-                category = factor(
-                  sample(letters[1:5], n, replace = TRUE)
-                  ),
-                value = rnorm(n))
+```{r, message=F, warning=F}
+#aquire census tracts
+
+census_api_key("a7f41abd86b507f92feb140131bdcbd24b0d9170", install = TRUE, overwrite = TRUE)
+readRenviron("~/.Renviron")  
+
+# Set the variable FOR median household income
+variables <- c(median_income = "B19013_001")
+
+# Get data for Monroe County
+tracts_monroe <- get_acs(
+  geography = "tract",
+  variables = variables,
+  state = "NY",
+  county = "Monroe",
+  geometry = TRUE
+)
+
+
+rochester_city <- places(state = "NY", cb = TRUE) %>% #tigris places command gets city boundary
+  filter(NAME == "Rochester")
+tracts_rochester <- tracts_monroe[st_within(tracts_monroe, rochester_city, sparse = FALSE), ] #removes tracts not within
+
+```
+```{r, results='asis'}
+
+map <- ggplot(tracts_rochester) +
+  geom_sf(aes(fill = estimate), color = NA) +
+  scale_fill_viridis_c(
+    option = "plasma",
+    name = "Median Income ($)"
+  ) +
+  labs(
+    title = "Median Household Income by Census Tract",
+    subtitle = "Rochester, NY (ACS Data)",
+    caption = "Source: U.S. Census Bureau via tidycensus"
+  ) +
+  theme_minimal()
+map
 ```
 
-```{r, results='asis'}
-data %>% 
-  slice(1:10) %>% #show only 1:n rows
-  kable(digits=2,align="c")%>% #make table and round to two digits
-  kable_styling(bootstrap_options = 
-                  c("striped", "hover", "condensed", "responsive")) #apply other formatting
-```
+
 
 Add any additional processing steps here.
 
 # Results
 
 \[\~200 words\]
-
-Tables and figures (maps and other graphics) are carefully planned to convey the results of your analysis. Intense exploration and evidence of many trials and failures. The author looked at the data in many different ways before coming to the final presentation of the data.
-
-Show tables, plots, etc. and describe them.
-
-```{r, fig.width=6, fig.height=3, fig.cap="Map of completely random data"}
-m <- leaflet(data) %>% 
-  addTiles() %>% 
-  addCircleMarkers(~x, ~y, radius = ~size,color = ~as.factor(category)) %>% 
-  addPopups(~x[2], ~y[2], "Random popup")
-m  # a map with the default OSM tile layer
-```
-
-```{r}
-data %>% 
-  ggplot(aes(x=x,y=y,col=category))+
-  geom_point()
-```
-
-### Dygraphs Example
-
-```{r}
-library(dygraphs)
-dygraph(nhtemp, main = "New Haven Temperatures") |> 
-  dyRangeSelector(dateWindow = c("1920-01-01", "1960-01-01")) 
-```
 
 # Conclusions
 
