@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your name here">
+<meta name="author" content="Damien Hotte">
 <meta name="dcterms.date" content="2025-11-13">
 
-<title>My Final Project Template – GEO511_FinalProject</title>
+<title>Heat Island Analysis of Rochester, New York – GEO511_FinalProject</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -105,25 +105,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
-<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
-<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
-<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
-<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
-<script src="site_libs/leaflet-binding-2.2.2/leaflet.js"></script>
-<link href="site_libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet">
-<script src="site_libs/dygraphs-1.1.1/dygraph-combined.js"></script>
-<script src="site_libs/dygraphs-1.1.1/shapes.js"></script>
-<script src="site_libs/moment-2.8.4/moment.js"></script>
-<script src="site_libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
-<script src="site_libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
-<script src="site_libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script>
 
 
 </head>
@@ -170,8 +151,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">My Final Project Template</h1>
-<p class="subtitle lead">Subtitle here if desired</p>
+<h1 class="title">Heat Island Analysis of Rochester, New York</h1>
+<p class="subtitle lead">Quantifying the Surface Urban Heat Island (SUHI) effect in Rochester and exploring its relationship with socioeconomic features.</p>
 </div>
 
 
@@ -181,7 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Your name here </p>
+             <p>Damien Hotte </p>
           </div>
   </div>
     
@@ -203,7 +184,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>[~ 200 words]</p>
-<p>Clearly stated background and questions / hypotheses / problems being addressed. Sets up the analysis in an interesting and compelling way. Include figures if you like.</p>
+<p>The Urban Heat Island (UHI) effect is a global phenomenon in which urban areas experience significantly higher Land Surface Temperatures (LST) than their surrounding rural counterparts. This temperature disparity is caused primarily by the dense concentration of buildings, roads, and other impervious surfaces that absorb and retain heat, along with a decrease of vegetation and green spaces that would otherwise provide natural cooling, reduced by urban expansion.</p>
+<p>In cities like Rochester, New York, heat patterns do not impact all communities equally. Variations in land use, socio-economic conditions, and access to vegetation can create localized “hot spots” that exacerbate health and environmental inequities. Prolonged exposure to elevated temperatures can increase energy demands, worsen air quality, and put vulnerable populations at risk. This project seeks to examine the relationship between socio-economic and land-use patterns and disparities in heat exposure across Rochester.</p>
+<p>Specifically, it aims to explore how differences in vegetative cover mediate these temperature variations and whether neighborhoods with lower income or less green space experience greater heat stress.By analyzing spatial data on LST, land use, and vegetation distribution, this study will shed light on the socio-environmental dynamics of urban heat and contribute to more equitable strategies for climate resilience.</p>
+<p>Note: Changes from brainstorm- narrowing to just focus on Rochester instead of including buffalo, in order to better focus on the comparison of land use and poverty’s impact on green space in Rochester.</p>
 </section>
 <section id="materials-and-methods" class="level1">
 <h1>Materials and methods</h1>
@@ -211,180 +195,260 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Narrative: Clear narrative description of the data sources and methods. Includes data from at least two sources that were integrated / merged in R.</p>
 <p>Code: The code associated with the project is well organized and easy to follow. Demonstrates mastery of R graphics and functions.</p>
 <p>Data: The underlying data are publicly accessible via the web and downloaded/accessed within the Rmd script. If you want to use your own data, you must make it available on a website (e.g.&nbsp;Figshare) so that others are able to re-run your code.</p>
-<p>You can do bullets like this:</p>
-<ul>
-<li>The first most important thing</li>
-<li>The second most important thing</li>
-<li>The third most important thing</li>
-</ul>
-<p>You can do numbers like this:</p>
-<ol type="1">
-<li>The first most important thing</li>
-<li>The second most important thing</li>
-<li>The third most important thing</li>
-</ol>
-<p>See <a href="http://rmarkdown.rstudio.com/" class="uri">http://rmarkdown.rstudio.com/</a> for all the amazing things you can do.</p>
-<p>Here’s my first code chunk.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="dv">3</span><span class="sc">+</span><span class="dv">4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Refer to output in your narrative like this: x=7 .</p>
-<p>Load any required packages in a code chunk (you may need to install some packages):</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(htmlwidgets)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(widgetframe)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">widgetframe_widgets_dir =</span> <span class="st">'widgets'</span> ) </span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">cache=</span><span class="cn">TRUE</span>)  <span class="co"># cache the results for quick compiling</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(htmlwidgets)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(widgetframe)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidycensus)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tigris)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">widgetframe_widgets_dir =</span> <span class="st">'widgets'</span> ) </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">cache=</span><span class="cn">TRUE</span>)  <span class="co"># cache the results for quick compiling</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="download-and-clean-all-required-data" class="level2">
 <h2 class="anchored" data-anchor-id="download-and-clean-all-required-data">Download and clean all required data</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">20</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data<span class="ot">=</span><span class="fu">data.frame</span>(<span class="at">x=</span><span class="fu">runif</span>(n,<span class="sc">-</span><span class="dv">180</span>,<span class="dv">180</span>),</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">y=</span><span class="fu">runif</span>(n,<span class="sc">-</span><span class="dv">60</span>,<span class="dv">60</span>),</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">size =</span> <span class="fu">runif</span>(n, <span class="dv">5</span>, <span class="dv">20</span>),</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">category =</span> <span class="fu">factor</span>(</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">sample</span>(letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>], n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                  ),</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">value =</span> <span class="fu">rnorm</span>(n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#aquire census tracts</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">census_api_key</span>(<span class="st">"a7f41abd86b507f92feb140131bdcbd24b0d9170"</span>, <span class="at">install =</span> <span class="cn">TRUE</span>, <span class="at">overwrite =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "a7f41abd86b507f92feb140131bdcbd24b0d9170"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%&gt;%</span> <span class="co">#show only 1:n rows</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits=</span><span class="dv">2</span>,<span class="at">align=</span><span class="st">"c"</span>)<span class="sc">%&gt;%</span> <span class="co">#make table and round to two digits</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> </span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>, <span class="st">"responsive"</span>)) <span class="co">#apply other formatting</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="table-responsive">
-<table class="table table-striped table-hover table-condensed caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: center;" data-quarto-table-cell-role="th">x</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">y</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">size</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">category</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">-83.12</td>
-<td style="text-align: center;">56.11</td>
-<td style="text-align: center;">18.59</td>
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">0.51</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">90.31</td>
-<td style="text-align: center;">-37.30</td>
-<td style="text-align: center;">9.75</td>
-<td style="text-align: center;">e</td>
-<td style="text-align: center;">-0.53</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">-27.15</td>
-<td style="text-align: center;">-30.26</td>
-<td style="text-align: center;">11.04</td>
-<td style="text-align: center;">a</td>
-<td style="text-align: center;">0.27</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">-152.28</td>
-<td style="text-align: center;">8.47</td>
-<td style="text-align: center;">6.10</td>
-<td style="text-align: center;">d</td>
-<td style="text-align: center;">-0.27</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">59.17</td>
-<td style="text-align: center;">-34.07</td>
-<td style="text-align: center;">13.25</td>
-<td style="text-align: center;">d</td>
-<td style="text-align: center;">0.09</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">8.11</td>
-<td style="text-align: center;">-43.09</td>
-<td style="text-align: center;">14.06</td>
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">1.49</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">-53.08</td>
-<td style="text-align: center;">-34.91</td>
-<td style="text-align: center;">18.79</td>
-<td style="text-align: center;">b</td>
-<td style="text-align: center;">-1.00</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">148.90</td>
-<td style="text-align: center;">-42.21</td>
-<td style="text-align: center;">13.00</td>
-<td style="text-align: center;">e</td>
-<td style="text-align: center;">-1.84</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">-75.61</td>
-<td style="text-align: center;">27.60</td>
-<td style="text-align: center;">14.45</td>
-<td style="text-align: center;">d</td>
-<td style="text-align: center;">1.74</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">-5.35</td>
-<td style="text-align: center;">-30.45</td>
-<td style="text-align: center;">11.91</td>
-<td style="text-align: center;">e</td>
-<td style="text-align: center;">-0.12</td>
-</tr>
-</tbody>
-</table>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">readRenviron</span>(<span class="st">"~/.Renviron"</span>)  </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the variable FOR median household income</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>variables <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">median_income =</span> <span class="st">"B19013_001"</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Get data for Monroe County</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>tracts_monroe <span class="ot">&lt;-</span> <span class="fu">get_acs</span>(</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">geography =</span> <span class="st">"tract"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">variables =</span> variables,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">state =</span> <span class="st">"NY"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">county =</span> <span class="st">"Monroe"</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">geometry =</span> <span class="cn">TRUE</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  |                                                                            
+  |                                                                      |   0%
+  |                                                                            
+  |==                                                                    |   3%
+  |                                                                            
+  |===                                                                   |   4%
+  |                                                                            
+  |===                                                                   |   5%
+  |                                                                            
+  |====                                                                  |   6%
+  |                                                                            
+  |=====                                                                 |   7%
+  |                                                                            
+  |=====                                                                 |   8%
+  |                                                                            
+  |======                                                                |   9%
+  |                                                                            
+  |=======                                                               |   9%
+  |                                                                            
+  |=======                                                               |  10%
+  |                                                                            
+  |========                                                              |  11%
+  |                                                                            
+  |=========                                                             |  12%
+  |                                                                            
+  |=========                                                             |  13%
+  |                                                                            
+  |=========                                                             |  14%
+  |                                                                            
+  |==========                                                            |  14%
+  |                                                                            
+  |===========                                                           |  15%
+  |                                                                            
+  |===========                                                           |  16%
+  |                                                                            
+  |============                                                          |  17%
+  |                                                                            
+  |============                                                          |  18%
+  |                                                                            
+  |==============                                                        |  19%
+  |                                                                            
+  |==============                                                        |  20%
+  |                                                                            
+  |===============                                                       |  21%
+  |                                                                            
+  |================                                                      |  23%
+  |                                                                            
+  |=================                                                     |  24%
+  |                                                                            
+  |=================                                                     |  25%
+  |                                                                            
+  |==================                                                    |  26%
+  |                                                                            
+  |===================                                                   |  27%
+  |                                                                            
+  |====================                                                  |  29%
+  |                                                                            
+  |=====================                                                 |  30%
+  |                                                                            
+  |======================                                                |  31%
+  |                                                                            
+  |=======================                                               |  32%
+  |                                                                            
+  |========================                                              |  34%
+  |                                                                            
+  |========================                                              |  35%
+  |                                                                            
+  |=========================                                             |  36%
+  |                                                                            
+  |==========================                                            |  36%
+  |                                                                            
+  |===========================                                           |  39%
+  |                                                                            
+  |============================                                          |  40%
+  |                                                                            
+  |=============================                                         |  42%
+  |                                                                            
+  |==============================                                        |  42%
+  |                                                                            
+  |==============================                                        |  43%
+  |                                                                            
+  |===============================                                       |  44%
+  |                                                                            
+  |================================                                      |  46%
+  |                                                                            
+  |=================================                                     |  47%
+  |                                                                            
+  |==================================                                    |  49%
+  |                                                                            
+  |===================================                                   |  50%
+  |                                                                            
+  |=====================================                                 |  53%
+  |                                                                            
+  |======================================                                |  54%
+  |                                                                            
+  |=======================================                               |  56%
+  |                                                                            
+  |========================================                              |  57%
+  |                                                                            
+  |==========================================                            |  59%
+  |                                                                            
+  |==========================================                            |  60%
+  |                                                                            
+  |============================================                          |  63%
+  |                                                                            
+  |=============================================                         |  64%
+  |                                                                            
+  |==============================================                        |  65%
+  |                                                                            
+  |==============================================                        |  66%
+  |                                                                            
+  |===============================================                       |  67%
+  |                                                                            
+  |================================================                      |  69%
+  |                                                                            
+  |=================================================                     |  70%
+  |                                                                            
+  |==================================================                    |  71%
+  |                                                                            
+  |==================================================                    |  72%
+  |                                                                            
+  |===================================================                   |  73%
+  |                                                                            
+  |====================================================                  |  74%
+  |                                                                            
+  |=====================================================                 |  75%
+  |                                                                            
+  |=====================================================                 |  76%
+  |                                                                            
+  |======================================================                |  77%
+  |                                                                            
+  |=======================================================               |  79%
+  |                                                                            
+  |========================================================              |  80%
+  |                                                                            
+  |========================================================              |  81%
+  |                                                                            
+  |==========================================================            |  82%
+  |                                                                            
+  |==========================================================            |  83%
+  |                                                                            
+  |===========================================================           |  84%
+  |                                                                            
+  |============================================================          |  86%
+  |                                                                            
+  |=============================================================         |  87%
+  |                                                                            
+  |==============================================================        |  89%
+  |                                                                            
+  |===============================================================       |  90%
+  |                                                                            
+  |================================================================      |  91%
+  |                                                                            
+  |=================================================================     |  92%
+  |                                                                            
+  |==================================================================    |  94%
+  |                                                                            
+  |===================================================================   |  96%
+  |                                                                            
+  |====================================================================  |  97%
+  |                                                                            
+  |===================================================================== |  99%
+  |                                                                            
+  |======================================================================| 100%</code></pre>
 </div>
-<p>Add any additional processing steps here.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>rochester_city <span class="ot">&lt;-</span> <span class="fu">places</span>(<span class="at">state =</span> <span class="st">"NY"</span>, <span class="at">cb =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> <span class="co">#tigris places command gets city boundary</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(NAME <span class="sc">==</span> <span class="st">"Rochester"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  |                                                                            
+  |                                                                      |   0%
+  |                                                                            
+  |====                                                                  |   5%
+  |                                                                            
+  |=======                                                               |  11%
+  |                                                                            
+  |===============                                                       |  21%
+  |                                                                            
+  |==================                                                    |  26%
+  |                                                                            
+  |======================                                                |  32%
+  |                                                                            
+  |==============================                                        |  42%
+  |                                                                            
+  |=================================                                     |  48%
+  |                                                                            
+  |============================================                          |  64%
+  |                                                                            
+  |==============================================                        |  66%
+  |                                                                            
+  |====================================================                  |  74%
+  |                                                                            
+  |=========================================================             |  82%
+  |                                                                            
+  |======================================================================| 100%</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>tracts_rochester <span class="ot">&lt;-</span> tracts_monroe[<span class="fu">st_within</span>(tracts_monroe, rochester_city, <span class="at">sparse =</span> <span class="cn">FALSE</span>), ] <span class="co">#removes tracts not within</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>map <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(tracts_rochester) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> estimate), <span class="at">color =</span> <span class="cn">NA</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">option =</span> <span class="st">"plasma"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">"Median Income ($)"</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Median Household Income by Census Tract"</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Rochester, NY (ACS Data)"</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Source: U.S. Census Bureau via tidycensus"</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>map</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </section>
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
 <p>[~200 words]</p>
-<p>Tables and figures (maps and other graphics) are carefully planned to convey the results of your analysis. Intense exploration and evidence of many trials and failures. The author looked at the data in many different ways before coming to the final presentation of the data.</p>
-<p>Show tables, plots, etc. and describe them.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">leaflet</span>(data) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircleMarkers</span>(<span class="sc">~</span>x, <span class="sc">~</span>y, <span class="at">radius =</span> <span class="sc">~</span>size,<span class="at">color =</span> <span class="sc">~</span><span class="fu">as.factor</span>(category)) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addPopups</span>(<span class="sc">~</span>x[<span class="dv">2</span>], <span class="sc">~</span>y[<span class="dv">2</span>], <span class="st">"Random popup"</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>m  <span class="co"># a map with the default OSM tile layer</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-58794a7edf410cd94496" style="width:100%;height:325px;"></div>
-<script type="application/json" data-for="htmlwidget-58794a7edf410cd94496">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addCircleMarkers","args":[[56.11229938454926,-37.30069083161652,-30.26499280706048,8.46539550460875,-34.0717822406441,-43.09253239072859,-34.91473353467882,-42.20791719853878,27.60310747660697,-30.4465800896287,-34.90004187449813,40.2512645535171,4.992225123569369,-48.15279057249427,-54.87691548652947,43.52248228155077,-58.50189414806664,35.99106950685382,21.23950288631022,-37.03435496427119],[-83.12457209452987,90.3056725859642,-27.1479644626379,-152.2839179355651,59.16978618130088,8.114510234445333,-53.08276620693505,148.8970931991935,-75.61319695785642,-5.350939258933067,36.68153534643352,127.2899543121457,63.12396450899541,-54.93296739645302,144.0171481668949,138.7780422717333,8.981153592467308,28.1365838740021,-122.8928525000811,99.31848512962461],[18.59334240201861,9.748471322236583,11.03654551552609,6.103274232009426,13.25010851840489,14.05563862412237,18.79073378746398,12.99965539365076,14.44961670786142,11.90513451583683,15.98344604950398,14.18208377202973,14.26086330669932,14.23799047595821,5.065872713457793,6.552840898511931,15.25192092987709,5.812807151814923,7.481107966741547,14.70719117089175],null,null,{"interactive":true,"className":"","stroke":true,"color":["b","e","a","d","d","b","b","e","d","e","b","e","e","c","d","b","e","a","b","b"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["b","e","a","d","d","b","b","e","d","e","b","e","e","c","d","b","e","a","b","b"],"fillOpacity":0.2},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addPopups","args":[-37.30069083161652,90.3056725859642,"Random popup",null,null,{"maxWidth":300,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"className":""}]}],"limits":{"lat":[-58.50189414806664,56.11229938454926],"lng":[-152.2839179355651,148.8970931991935]}},"evals":[],"jsHooks":[]}</script>
-<p>Map of completely random data</p>
-</div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>x,<span class="at">y=</span>y,<span class="at">col=</span>category))<span class="sc">+</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<section id="dygraphs-example" class="level3">
-<h3 class="anchored" data-anchor-id="dygraphs-example">Dygraphs Example</h3>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dygraphs)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dygraph</span>(nhtemp, <span class="at">main =</span> <span class="st">"New Haven Temperatures"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dyRangeSelector</span>(<span class="at">dateWindow =</span> <span class="fu">c</span>(<span class="st">"1920-01-01"</span>, <span class="st">"1960-01-01"</span>)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div class="dygraphs html-widget html-fill-item" id="htmlwidget-fe8130c2ff29027ff68e" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-fe8130c2ff29027ff68e">{"x":{"attrs":{"title":"New Haven Temperatures","labels":["year","V1"],"legend":"auto","retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"showRangeSelector":true,"dateWindow":["1920-01-01T00:00:00.000Z","1960-01-01T00:00:00.000Z"],"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel"},"scale":"yearly","annotations":[],"shadings":[],"events":[],"format":"date","data":[["1912-01-01T00:00:00.000Z","1913-01-01T00:00:00.000Z","1914-01-01T00:00:00.000Z","1915-01-01T00:00:00.000Z","1916-01-01T00:00:00.000Z","1917-01-01T00:00:00.000Z","1918-01-01T00:00:00.000Z","1919-01-01T00:00:00.000Z","1920-01-01T00:00:00.000Z","1921-01-01T00:00:00.000Z","1922-01-01T00:00:00.000Z","1923-01-01T00:00:00.000Z","1924-01-01T00:00:00.000Z","1925-01-01T00:00:00.000Z","1926-01-01T00:00:00.000Z","1927-01-01T00:00:00.000Z","1928-01-01T00:00:00.000Z","1929-01-01T00:00:00.000Z","1930-01-01T00:00:00.000Z","1931-01-01T00:00:00.000Z","1932-01-01T00:00:00.000Z","1933-01-01T00:00:00.000Z","1934-01-01T00:00:00.000Z","1935-01-01T00:00:00.000Z","1936-01-01T00:00:00.000Z","1937-01-01T00:00:00.000Z","1938-01-01T00:00:00.000Z","1939-01-01T00:00:00.000Z","1940-01-01T00:00:00.000Z","1941-01-01T00:00:00.000Z","1942-01-01T00:00:00.000Z","1943-01-01T00:00:00.000Z","1944-01-01T00:00:00.000Z","1945-01-01T00:00:00.000Z","1946-01-01T00:00:00.000Z","1947-01-01T00:00:00.000Z","1948-01-01T00:00:00.000Z","1949-01-01T00:00:00.000Z","1950-01-01T00:00:00.000Z","1951-01-01T00:00:00.000Z","1952-01-01T00:00:00.000Z","1953-01-01T00:00:00.000Z","1954-01-01T00:00:00.000Z","1955-01-01T00:00:00.000Z","1956-01-01T00:00:00.000Z","1957-01-01T00:00:00.000Z","1958-01-01T00:00:00.000Z","1959-01-01T00:00:00.000Z","1960-01-01T00:00:00.000Z","1961-01-01T00:00:00.000Z","1962-01-01T00:00:00.000Z","1963-01-01T00:00:00.000Z","1964-01-01T00:00:00.000Z","1965-01-01T00:00:00.000Z","1966-01-01T00:00:00.000Z","1967-01-01T00:00:00.000Z","1968-01-01T00:00:00.000Z","1969-01-01T00:00:00.000Z","1970-01-01T00:00:00.000Z","1971-01-01T00:00:00.000Z"],[49.9,52.3,49.4,51.1,49.4,47.9,49.8,50.9,49.3,51.9,50.8,49.6,49.3,50.6,48.4,50.7,50.9,50.6,51.5,52.8,51.8,51.1,49.8,50.2,50.4,51.6,51.8,50.9,48.8,51.7,51,50.6,51.7,51.5,52.1,51.3,51,54,51.4,52.7,53.1,54.6,52,52,50.9,52.6,50.2,52.6,51.6,51.9,50.5,50.9,51.7,51.4,51.7,50.8,51.9,51.8,51.9,53]]},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
-</div>
-</div>
-</section>
 </section>
 <section id="conclusions" class="level1">
 <h1>Conclusions</h1>
