@@ -3,7 +3,7 @@ title: "Heat Island Analysis of Rochester, New York"
 author: Damien Hotte
 subtitle: Quantifying the Surface Urban Heat Island (SUHI) effect in Rochester and exploring its relationship with socioeconomic features.
 date: today
-date-format: long
+date-format: long 
 ---
 
 # Introduction
@@ -16,7 +16,7 @@ In cities like Rochester, New York, heat patterns do not impact all communities 
 
 Specifically, it aims to explore how differences in vegetative cover mediate these temperature variations and whether neighborhoods with lower income or less green space experience greater heat stress.By analyzing spatial data on LST, land use, and vegetation distribution, this study will shed light on the socio-environmental dynamics of urban heat and contribute to more equitable strategies for climate resilience.
 
-Note: Changes from brainstorm- narrowing to just focus on Rochester instead of including buffalo, in order to better focus on the comparison of land use and poverty’s impact on green space in Rochester.
+Note: Changes from brainstorm- narrowing to just focus on Rochester instead of including buffalo, in order to better focus on the comparison of land use and poverty’s impact on green space in Rochester. 
 
 
 # Materials and methods
@@ -48,9 +48,9 @@ knitr::opts_chunk$set(cache=TRUE)  # cache the results for quick compiling
 ## Download and clean all required data
 
 ```{r, message=F, warning=F}
-#aquire census tracts
+#aquire census tracts 
 
-census_api_key("a7f41abd86b507f92feb140131bdcbd24b0d9170", install = TRUE, overwrite = TRUE)
+census_api_key("a7f41abd86b507f92feb140131bdcbd24b0d9170", install = TRUE, overwrite = TRUE) 
 readRenviron("~/.Renviron")  
 
 # Set the variable FOR median household income
@@ -68,12 +68,12 @@ tracts_monroe <- get_acs(
 
 rochester_city <- places(state = "NY", cb = TRUE) %>% #tigris places command gets city boundary
   filter(NAME == "Rochester")
-tracts_rochester <- tracts_monroe[st_within(tracts_monroe, rochester_city, sparse = FALSE), ] #removes tracts not within
+tracts_rochester <- tracts_monroe[st_within(tracts_monroe, rochester_city, sparse = FALSE), ] #removes tracts not within 
 
 ```
 ```{r, results='asis'}
 
-map <- ggplot(tracts_rochester) +
+map <- ggplot(tracts_rochester) + 
   geom_sf(aes(fill = estimate), color = NA) +
   scale_fill_viridis_c(
     option = "plasma",
